@@ -4,7 +4,6 @@ padding: 0;
 box-sizing: border-box;
 }
 #Product{
-    /* border: 2px solid black; */
     width: 70%;
     margin: 20px;
 }
@@ -17,14 +16,37 @@ box-sizing: border-box;
 h1{
     width: 100%;
 }
+#main{
+    width: 100%;
+    background-color: #FCF8F5;
+}
+#treebtn{
+background-color:#FCF8F5;
+font-size: 12px;
+padding: 9px 20px;
+margin-left: 30px;
+border-radius: 5px;
+border: none;
+}
+#confirmbtn{
+    background-color: #C83B0E;
+    border-radius: 20px;
+    width: 80%;
+    padding: 5px 10px;
+    border: none;
+    color: #FFFFFE;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
 #btn{
     display: block;
-    padding: 5px 10px;
+    padding: 5px 8px;
     border-radius: 60px;
     border-color: #C18D83;
-    color:#61534E;
+    color:#C83B0E;
     margin-top: -20px;
-    margin-left: 20px;
+    margin-left: 30px;
     position: relative;
     background-color: #FFFFFE;
 }
@@ -37,7 +59,7 @@ h1{
     width: 30%;
 }
 #btncart{
-    background-color: red;
+    background-color: #C83B0E;
     position: absolute;
     width: 50%;
     padding: 9px 10px;
@@ -46,25 +68,37 @@ h1{
     padding: 5px 10px;
     border-radius: 60px;
     border-color: #C18D83;
-    color:#61534E;
+    color:#FFFFFE;
     margin-top: -20px;
-    margin-left: 20px;
+    margin-left: 30px;
     position: relative;
-    background-color: burlywood;
       display: none; 
     justify-content: space-between !important;
 
 }
   
-    
-
+ .cart2{
+    border: 2px solid red !important;
+    width: 30%;
+    margin: 30px;
+    font-size: 17px;
+    background-color: #FFFFFE;
+ }   
+#your{
+    color: #C83B0E;
+}
 #decrease{
-    border: 2px solid black;
-    padding: 8px;
+    border: 1px solid white;
+    padding: 6px;
+    color: #C83B0E;
     border-radius: 50px;
 }
 #increase{
-    border: 2px solid black;
+    border: 1px solid white;
+    color: #C83B0E;
     padding: 6px;
     border-radius: 50px;
+}
+span{
+    float: right;
 }
