@@ -76,13 +76,17 @@ border: none;
     justify-content: space-between !important;
 
 }
-  
+  .cartitems{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+  }
  .cart2{
-    border: 2px solid red !important;
+    /* border: 2px solid red !important; */
     width: 30%;
+    background-color: #FCF8F5;
     margin: 30px;
     font-size: 17px;
-    background-color: #FFFFFE;
  }   
 #your{
     color: #C83B0E;
@@ -101,4 +105,10 @@ border: none;
 }
 span{
     float: right;
+    
+}
+#times{
+    border: 1px solid #C83B0E;
+    border-radius: 50%;
+    padding: 2px;
 }

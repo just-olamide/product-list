@@ -1,4 +1,5 @@
 let product = document.getElementById("Product");
+let cartItems = {};
 
 async function fetchProduct() {
   try {
@@ -36,9 +37,9 @@ async function fetchProduct() {
         document.getElementById('cake').style.display = 'none'
         cartTwo.innerHTML = ` <h5> ${element.name}</h5>
 
-    <p>${(counter = 1)}x ${element.price.toFixed(
-          2
-        )}<span><img src="./assets/images/icon-remove-item.svg" alt=""></span></p>`;
+    <p>${(counter = 1)} x ${element.price.toFixed(2)} ${(element.price * counter).toFixed(2)}
+    <span id = "times"><img  src="./assets/images/icon-remove-item.svg" alt=""></span></p>`;
+  
       });
 
       cartProduct.querySelector("#decrease").addEventListener("click", () => {
@@ -50,36 +51,44 @@ async function fetchProduct() {
 
           return;
         }
-
         counter--;
         cartProduct.querySelector("#counter").innerHTML = counter;
-        cartTwo.innerHTML = ` <h3> ${element.name}</h3>
+        cartTwo.innerHTML = ` <h5> ${element.name}</h5>
 
-        <p>${counter}x ${element.price.toFixed(
-          2
-        )}<span><img src="./assets/images/icon-remove-item.svg" alt=""></span></p>`;
+        <p>${counter} x $${element.price.toFixed(2)}
+         $${(counter * element.price).toFixed(2)}
+        <span  id = "times"><img src="./assets/images/icon-remove-item.svg" alt=""></span></p>`;
         console.log(counter);
+
       });
 
       cartProduct.querySelector("#increase").addEventListener("click", () => {
         counter++;
         cartProduct.querySelector("#counter").innerHTML = counter;
         console.log(counter);
-        cartTwo.innerHTML = ` <h3> ${element.name}</h3>
+        cartTwo.innerHTML = ` <h5> ${element.name}</h5>
 
-    <p>${counter}x ${element.price.toFixed(
-          2
-        )}<span><img src="./assets/images/icon-remove-item.svg" alt=""></span></p>`;
+    <p>${counter} x $${element.price.toFixed(2)}
+     $${(counter * element.price).toFixed(2)}
+    <span id = "times"><img src="./assets/images/icon-remove-item.svg" alt=""></span></p>`;
       });
       console.log(counter);
 
       document.getElementById("cart3").appendChild(cartTwo);
       cart.appendChild(cartProduct);
       product.appendChild(cart);
-      // const
+
     });
   } catch (error) {
     console.log(error);
   }
 }
 fetchProduct();
+
+  function addTotal() {
+    let total = 0;
+    for (let item in cartItems) {
+      total += cartItems[item].quantity * cartItems[item].price;
+    }
+    document.getElementById("total").innerText = `Total: $${total.toFixed(2)}`;
+  }
