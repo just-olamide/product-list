@@ -1,46 +1,62 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product List</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div
-      class="container-fluid  d-flex flex-row p-3"
-      id="main"
-    >
-      <div class="d-flex flex-wrap" id="Product">
-        <h1>Desserts</h1>
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <title>Shopping Cart</title>
+</head>
+<body>
+  <div id="main-section" class="container-fluid d-flex flex-row justify-content-between main-container">
+    <div id="products" class="d-flex flex-wrap">
+      
+      <h1>Products</h1>
+    </div>
+
+    <div id="cart-section" class="col-12 col-md-6">
+      <div class="cart-container">
+        <div id="cart-items">
+          <h1 id="cart-title">Your Cart (<span id="item-count">0</span>)</h1>
+          <div id="empty-cart">
+            <img src="./assets/images/illustration-empty-cart.svg" alt="Empty Cart">
+            <br><br>
+            <p>Your items will appear here</p>
+          </div>
+        </div>
+        <div id="order-summary">
+          <h6><b>Order Total:</b><span id="order-total"></span></h6>
+          <p><img src="./assets/images/icon-carbon-neutral.svg" alt="Carbon Neutral"> This is a carbon-neutral delivery</p>
+          <button id="checkout-btn">Confirm Order</button>
+        </div>
       </div>
-      <div class="lists"></div>
-      <div class="cart2" id="cart2">
-<div class="cartitems">
-        <h4 id="your">Your Cart(0)</h4><img id="cake" src="/assets/images/illustration-empty-cart.svg" alt="">
+    </div>
+  </div>
 
-        <div id="cart3"></div>
-<div class="total" id="total">
-  <p>Order Total <span>$</span></p>
-</div>
-       <div> <button id="treebtn"><img src="./assets/images/icon-carbon-neutral.svg"> This is a carbon-neutral delivery</button>
-      <button id="confirmbtn">Confirm Order</button></div>
+  <div class="modal-overlay" id="modal-overlay">
+    <div id="confirmation-modal">
+      <p>Are you sure you want to place this order?</p>
+      <div id="order-details"></div>
+      <br>
+      <button id="confirm-order">Proceed</button>
+      <button id="cancel-order">Cancel</button>
     </div>
-    </div>
-    </div>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <div id="order-completed">
+    <img src="./assets/images/icon-order-confirmed.svg" alt="Order Confirmed">
+    <br>
+    <b>Order Confirmed</b>
+    <div id="confirmed-order-details"></div>
+    <button id="new-order">Start New Order</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+</body>
 </html>
